@@ -3,7 +3,12 @@
       {
         "src": "PortfolioGen/wsgi.py",
         "use": "@vercel/python"
+          
       }
+         "env": {
+      "MYSQLCLIENT_CFLAGS": "-I/path/to/mysqlclient/headers",
+      "MYSQLCLIENT_LDFLAGS": "-L/path/to/mysqlclient/lib -lmysqlclient"
+    },
     ],
     "routes": [
       {
@@ -12,11 +17,4 @@
       }
     ]
 }
-{
-  "build": {
-    "env": {
-      "MYSQLCLIENT_CFLAGS": "-I/path/to/mysqlclient/headers",
-      "MYSQLCLIENT_LDFLAGS": "-L/path/to/mysqlclient/lib -lmysqlclient"
-    }
-  }
-}
+
