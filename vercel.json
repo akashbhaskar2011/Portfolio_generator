@@ -12,3 +12,11 @@
       }
     ]
 }
+{
+  "build": {
+    "env": {
+      "MYSQLCLIENT_CFLAGS": "-I/path/to/mysqlclient/headers",
+      "MYSQLCLIENT_LDFLAGS": "-L/path/to/mysqlclient/lib -lmysqlclient"
+    }
+  }
+}
