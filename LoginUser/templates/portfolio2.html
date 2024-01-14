@@ -1,0 +1,166 @@
+{%load static%}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio </title>
+
+    <style>
+        #header {
+            width: 100%;
+            height: 100vh;
+            background-image: url("{% static 'LoginUser/images/38882.jpeg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+
+    <link rel="stylesheet" href="{% static 'LoginUser/css/portfolio2/portfolio2.css' %}">
+    </head>
+    
+    <body>
+      <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <p class="fas" onclick="closemenu()">Close</p>
+                     </ul>
+                    <p class="fas" onclick="openmenu()">Menu</p> 
+                </nav>
+                    <div class="header-text">
+                        <p>Student</p>
+                        <h1>Hi, I'm <span>Ritu Hutagi</span></h1>
+                    </div>
+                </div>
+      </div>
+      <div id="about">
+        <div class="container">
+            <div class="row">
+            <div class="about-col-1">
+                <img src="{% static 'LoginUser/images/heroImage.jpeg'%}" alt="image">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I'm Ritu Suresh Hutagi. Currently pursuing a degree in computer science engineering at KLS GIT.
+                    passionate to learn new things.I'm a NSS volunteer.
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links" class="active-link" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                </div>
+                <div class="tab-contents active-tab" id="education">
+                    <ul>
+                        <li><span>2019</span><br>Pass out from Amrita Vidyalayam <br>Secured 85.2% in 10th standard </li>
+                        <li><span>2021</span><br>Pre University from Rabindranath Tagore College<br>Secured 94.8% in +2 </li>
+                        <li><span>2023</span><br>Student at KLS GIT </li>
+                    </ul>
+
+                </div>
+                <div class="tab-contents" id="skills">
+                    <ul>
+                        <li><span>Communication skills</span><br></li>
+                        <li><span>Tech</span><br>C,Html,Css,Javascript </li>
+                        <li><span>Hobbies</span><br>Dance,Singing,Travelling </li>
+                    </ul>
+
+                </div>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div id="portfolio">
+        <div id="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="{{data.project1_pic_link}}">
+                <div class="layer">
+                    <h3>HTML</h3>
+                    <p>HTML is the standard markup language for creating Web pages.
+                    </p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{{data.project1_pic_link}}">
+                <div class="layer">
+                    <h3> CSS</h3>
+                    <p>CSS is the language for describing the presentation of Web pages, including colors, layout, and fonts.
+                 It allows one to adapt the presentation to different types of devices, 
+                such as large screens, small screens, or printers. CSS is independent of HTML and can be
+                         used with any XML-based markup languag
+                    </p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{{data.project1_pic_link}}">
+                <div class="layer">
+                    <h3>Javascript </h3>
+                    <p>
+                        JavaScript is a scripting language that enables
+                     you to create dynamically updating content, control multimedia, 
+                         animate images, and pretty much everything else.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+      </div>
+      <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>rituhutagi@gmail.com</p>
+                    <p>6363521179</p>
+                    <a href="" class="btn">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @Ritu Hutagi</p>
+        </div>
+      </div>
+
+      <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+      </script>
+      <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+      </script>
+        </body>
+        </html>
+    </body></html>
