@@ -35,7 +35,7 @@
                 </nav>
                     <div class="header-text">
                         <p>Student</p>
-                        <h1>Hi, I'm <span>Ritu Hutagi</span></h1>
+                        <h1>Hi, I'm <span>{{data.name}}</span></h1>
                     </div>
                 </div>
       </div>
@@ -47,15 +47,14 @@
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <p>I'm Ritu Suresh Hutagi. Currently pursuing a degree in computer science engineering at KLS GIT.
-                    passionate to learn new things.I'm a NSS volunteer.
+                <p>{{data.about_me}}
                 </p>
 
-                <div class="tab-titles">
+                {% comment %} <div class="tab-titles">
                     <p class="tab-links" class="active-link" onclick="opentab('education')">Education</p>
                     <p class="tab-links" onclick="opentab('skills')">Skills</p>
-                </div>
-                <div class="tab-contents active-tab" id="education">
+                </div> {% endcomment %}
+                {% comment %} <div class="tab-contents active-tab" id="education">
                     <ul>
                         <li><span>2019</span><br>Pass out from Amrita Vidyalayam <br>Secured 85.2% in 10th standard </li>
                         <li><span>2021</span><br>Pre University from Rabindranath Tagore College<br>Secured 94.8% in +2 </li>
@@ -70,7 +69,7 @@
                         <li><span>Hobbies</span><br>Dance,Singing,Travelling </li>
                     </ul>
 
-                </div>
+                </div> {% endcomment %}
             </div>
             </div>
         </div>
@@ -91,7 +90,8 @@
                 <img src="{{data.project1_pic_link}}">
                 <div class="layer">
                     <h3> CSS</h3>
-                    <p>CSS is the language for describing the presentation of Web pages, including colors, layout, and fonts.
+                    <p>{{data.email}}
+                        CSS is the language for describing the presentation of Web pages, including colors, layout, and fonts.
                  It allows one to adapt the presentation to different types of devices, 
                 such as large screens, small screens, or printers. CSS is independent of HTML and can be
                          used with any XML-based markup languag
@@ -117,8 +117,8 @@
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p>rituhutagi@gmail.com</p>
-                    <p>6363521179</p>
+                    <p>{{data.email }}</p>
+                    <p>{{data.phone_number}}</p>
                     <a href="" class="btn">Download CV</a>
                 </div>
                 <div class="contact-right">
@@ -132,7 +132,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>Copyright @Ritu Hutagi</p>
+            <p>Copyright @{{data.name}}</p>
         </div>
       </div>
 
